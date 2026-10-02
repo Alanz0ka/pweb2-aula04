@@ -7,6 +7,11 @@ export class TarefasController {
   // Injeção de dependência: o Nest entrega uma instância de TarefasService aqui.
   constructor(private readonly tarefasService: TarefasService) {}
 
+  @Get()
+  findAll() {
+    return this.tarefasService.findAll();
+  }
+
   // =====================================================================
   // TODO (aula): criar as rotas, seguindo o ROTEIRO-AULA.md:
   //   @Get()        findAll()
@@ -16,3 +21,7 @@ export class TarefasController {
   //   @Delete(':id') remove()
   // =====================================================================
 }
+function Get(): (target: TarefasController, propertyKey: "findAll", descriptor: TypedPropertyDescriptor<() => any>) => void | TypedPropertyDescriptor<() => any> {
+  throw new Error('Function not implemented.');
+}
+

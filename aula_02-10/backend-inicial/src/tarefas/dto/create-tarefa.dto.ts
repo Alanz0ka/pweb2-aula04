@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
+import { IsInt, IsNotEmpty, IsOptional, IsString, MaxLength, MinLength } from 'class-validator';
 
 // DTO = Data Transfer Object. Descreve o formato ESPERADO do corpo da requisição.
 // As anotações (decorators) do class-validator definem as REGRAS de validação.
@@ -14,4 +14,9 @@ export class CreateTarefaDto {
   @IsString({ message: 'A descrição deve ser um texto.' })
   @MaxLength(300, { message: 'A descrição deve ter no máximo 300 caracteres.' })
   descricao?: string;
+
+  // Desafio: a tarefa pode pertencer a um projeto.
+  @IsOptional()
+  @IsInt({ message: 'O projetoId deve ser um número inteiro.' })
+  projetoId?: number;
 }

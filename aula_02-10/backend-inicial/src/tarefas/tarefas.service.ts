@@ -14,8 +14,12 @@ export class TarefasService {
   ];
   private proximoId = 3;
 
-  findAll(): Tarefa[] {
-    return this.tarefas;
+  // Com projetoId, devolve só as tarefas daquele projeto (desafio).
+  findAll(projetoId?: number): Tarefa[] {
+    if (projetoId === undefined) {
+      return this.tarefas;
+    }
+    return this.tarefas.filter((t) => t.projetoId === projetoId);
   }
 
   findOne(id: number): Tarefa {
@@ -32,6 +36,7 @@ export class TarefasService {
       id: this.proximoId++,
       titulo: dto.titulo,
       descricao: dto.descricao,
+      projetoId: dto.projetoId,
       concluida: false,
     };
     this.tarefas.push(nova);

@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Body,
   Controller,
   Delete,
@@ -8,6 +9,7 @@ import {
   ParseIntPipe,
   Post,
   Put,
+  Query,
 } from '@nestjs/common';
 import { CreateTarefaDto } from './dto/create-tarefa.dto';
 import { UpdateTarefaDto } from './dto/update-tarefa.dto';
@@ -19,9 +21,17 @@ export class TarefasController {
   // Injeção de dependência: o Nest entrega uma instância de TarefasService.
   constructor(private readonly tarefasService: TarefasService) {}
 
+  // GET /api/tarefas?projetoId=1 filtra as tarefas de um projeto (desafio).
   @Get()
-  findAll() {
-    return this.tarefasService.findAll();
+  findAll(@Query('projetoId') projetoId?: string) {
+    if (projetoId === undefined) {
+      return this.tarefasService.findAll();
+    }
+    const id = Number(projetoId);
+    if (!Number.isInteger(id)) {
+      throw new BadRequestException('O projetoId deve ser um número inteiro.');
+    }
+    return this.tarefasService.findAll(id);
   }
 
   @Get(':id')

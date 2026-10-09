@@ -4,4 +4,5 @@ export class Tarefa {
   titulo: string;
   descricao?: string;
   concluida: boolean;
+  projetoId?: number;
 }

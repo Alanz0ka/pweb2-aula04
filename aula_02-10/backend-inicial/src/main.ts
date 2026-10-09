@@ -21,6 +21,6 @@ async function bootstrap() {
   );
 
   await app.listen(3000);
-  console.log('API NestJS To-Do em http://localhost:3000/api/tarefas');
+  console.log('API NestJS em http://localhost:3000/api (tarefas e projetos)');
 }
 bootstrap();

@@ -70,3 +70,50 @@ Todos os validadores de projetos e de tarefas usam a opção `{ message: '...' }
 - [x] `GET /api/projetos/999` retorna 404
 - [x] `PUT /api/projetos/1` com `{ "nome": "Faculdade 2026" }` retorna 200
 - [x] `DELETE /api/projetos/1` retorna 204
+
+## Prints do Postman
+
+Um print por critério de aceite, na ordem em que foram executados (servidor com `npm run start:dev`).
+
+| Requisição | Status | Print |
+|---|---|---|
+| `GET /api/projetos` | 200 | [01-get-lista-200.jpg](prints-postman/01-get-lista-200.jpg) |
+| `POST` Faculdade azul | 201 | [02-post-criar-201.jpg](prints-postman/02-post-criar-201.jpg) |
+| `POST` nome "ab" | 400 | [03-post-nome-curto-400.jpg](prints-postman/03-post-nome-curto-400.jpg) |
+| `POST` cor "rosa" | 400 | [04-post-cor-invalida-400.jpg](prints-postman/04-post-cor-invalida-400.jpg) |
+| `POST` com `xpto` | 400 | [05-post-campo-extra-400.jpg](prints-postman/05-post-campo-extra-400.jpg) |
+| `GET /api/projetos/999` | 404 | [06-get-999-404.jpg](prints-postman/06-get-999-404.jpg) |
+| `PUT /api/projetos/1` | 200 | [07-put-editar-200.jpg](prints-postman/07-put-editar-200.jpg) |
+| `DELETE /api/projetos/1` | 204 | [08-delete-204.jpg](prints-postman/08-delete-204.jpg) |
+
+**`GET /api/projetos` (200)**
+
+![`GET /api/projetos` 200](prints-postman/01-get-lista-200.jpg)
+
+**`POST` Faculdade azul (201)**
+
+![`POST` Faculdade azul 201](prints-postman/02-post-criar-201.jpg)
+
+**`POST` nome "ab" (400)**
+
+![`POST` nome "ab" 400](prints-postman/03-post-nome-curto-400.jpg)
+
+**`POST` cor "rosa" (400)**
+
+![`POST` cor "rosa" 400](prints-postman/04-post-cor-invalida-400.jpg)
+
+**`POST` com `xpto` (400)**
+
+![`POST` com `xpto` 400](prints-postman/05-post-campo-extra-400.jpg)
+
+**`GET /api/projetos/999` (404)**
+
+![`GET /api/projetos/999` 404](prints-postman/06-get-999-404.jpg)
+
+**`PUT /api/projetos/1` (200)**
+
+![`PUT /api/projetos/1` 200](prints-postman/07-put-editar-200.jpg)
+
+**`DELETE /api/projetos/1` (204)**
+
+![`DELETE /api/projetos/1` 204](prints-postman/08-delete-204.jpg)

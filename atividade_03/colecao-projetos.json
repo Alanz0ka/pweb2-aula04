@@ -1,0 +1,142 @@
+{
+  "info": {
+    "name": "Atividade 02-10 - CRUD de Projetos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Listar projetos (200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:3000/api/projetos"
+      }
+    },
+    {
+      "name": "2. Criar Faculdade azul (201)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:3000/api/projetos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Faculdade\",\n  \"cor\": \"azul\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "3. Nome curto 'ab' (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:3000/api/projetos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"ab\",\n  \"cor\": \"azul\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "4. Cor inválida 'rosa' (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:3000/api/projetos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Trabalho\",\n  \"cor\": \"rosa\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "5. Campo extra xpto (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:3000/api/projetos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Trabalho\",\n  \"cor\": \"azul\",\n  \"xpto\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "6. Projeto inexistente 999 (404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:3000/api/projetos/999"
+      }
+    },
+    {
+      "name": "7. Editar projeto 1 (200)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "http://localhost:3000/api/projetos/1",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Faculdade 2026\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "8. Excluir projeto 1 (204)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "http://localhost:3000/api/projetos/1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "web2-loja-api",
+  "version": "1.0.0",
+  "description": "API didática de produtos (Node.js + Express) para a aula de Programação Web 2",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

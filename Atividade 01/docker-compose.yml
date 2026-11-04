@@ -1,0 +1,45 @@
+# Docker Compose da aula "Três Arquiteturas, a Mesma Loja".
+#
+# A MESMA página (listagem de produtos + detalhe) implementada de três formas,
+# para mostrar a evolução da arquitetura Web:
+#
+#   1) Monólito "tudo junto"  -> PHP com HTML + CSS + SQL no mesmo arquivo
+#   2) MVC                    -> Laravel separando Model / Controller / View
+#   3) API + Front apartado   -> API Node/Express + SPA React
+#
+# Suba tudo com:
+#     docker compose up --build
+#
+# E acompanhe os containers com:
+#     docker ps
+
+services:
+  # Projeto 1 — Monólito PHP (tudo no mesmo arquivo).
+  monolito:
+    build: ./01-monolito-php
+    container_name: web2-monolito-php
+    ports:
+      - "8091:8000"
+
+  # Projeto 2 — Laravel MVC (responsabilidades separadas).
+  mvc:
+    build: ./02-mvc-laravel
+    container_name: web2-mvc-laravel
+    ports:
+      - "8092:8000"
+
+  # Projeto 3a — API Node.js + Express (devolve JSON).
+  api:
+    build: ./03-api-react/api
+    container_name: web2-api
+    ports:
+      - "8093:3000"
+
+  # Projeto 3b — Frontend React (consome a API acima).
+  react:
+    build: ./03-api-react/web
+    container_name: web2-react-front
+    ports:
+      - "8094:80"
+    depends_on:
+      - api

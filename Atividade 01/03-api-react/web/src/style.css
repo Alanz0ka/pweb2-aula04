@@ -1,0 +1,79 @@
+/* Projeto 3 — mesma identidade visual, com acento verde (emerald). */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #052e16;
+  background: #f0fdf4;
+  padding: 32px 20px;
+}
+
+.wrap { max-width: 960px; margin: 0 auto; }
+
+.badge {
+  display: inline-block; padding: 6px 12px; border-radius: 999px;
+  background: #dcfce7; color: #059669; font-weight: bold; font-size: 13px;
+}
+
+h1 { margin: 12px 0 4px; font-size: 28px; color: #052e16; }
+.sub { color: #4b5563; margin: 0 0 28px; }
+
+.grid {
+  display: grid; gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.card {
+  display: block; text-decoration: none; color: inherit;
+  background: #fff; border: 1px solid #d1fae5; border-radius: 14px;
+  padding: 22px; transition: transform .06s ease, box-shadow .2s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,.10); }
+
+.emoji { font-size: 46px; }
+.emoji-lg { font-size: 96px; }
+
+.cat {
+  display: inline-block; margin: 10px 0 8px; font-size: 12px;
+  color: #059669; background: #dcfce7; padding: 3px 8px; border-radius: 6px;
+}
+.nome { font-size: 17px; font-weight: bold; margin: 0 0 6px; }
+.preco { font-size: 18px; color: #16a34a; font-weight: bold; margin: 0; }
+
+.voltar { display: inline-block; margin: 16px 0; color: #059669; text-decoration: none; font-weight: bold; }
+
+.detalhe {
+  background: #fff; border: 1px solid #d1fae5; border-radius: 16px;
+  padding: 36px; display: flex; gap: 28px; align-items: center; flex-wrap: wrap;
+}
+.info { flex: 1; min-width: 240px; }
+.desc { color: #374151; line-height: 1.6; }
+.preco-lg { font-size: 30px; color: #16a34a; font-weight: bold; margin: 12px 0 4px; }
+.estoque { color: #6b7280; font-size: 14px; }
+
+/* Menu de navegação (Produtos / Categorias). */
+.nav { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.nav-link {
+  text-decoration: none; font-weight: bold; font-size: 14px; color: #059669;
+  padding: 8px 14px; border-radius: 8px; background: #fff; border: 1px solid #d1fae5;
+}
+.nav-link:hover { background: #ecfdf5; }
+.nav-link.ativo { background: #059669; color: #fff; border-color: #059669; }
+
+/* Descrição curta dentro do card de categoria. */
+.sub-card { color: #6b7280; font-size: 13px; margin: 6px 0 0; line-height: 1.45; }
+
+/* Título de seção (ex.: "Produtos desta categoria"). */
+.secao { font-size: 18px; margin: 28px 0 12px; color: #052e16; }
+
+/* Caixa de erro amigável (aparece enquanto o endpoint da API não existe). */
+.erro-box {
+  background: #fef2f2; border: 1px solid #fecaca; color: #991b1b;
+  border-radius: 12px; padding: 18px 20px;
+}
+.erro-box p { margin: 8px 0 0; color: #7f1d1d; font-size: 14px; line-height: 1.5; }
+.erro-box code {
+  background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px;
+  font-family: "Courier New", monospace; font-size: 13px;
+}

@@ -1,0 +1,7 @@
+# Força quebras de linha LF em todos os arquivos de texto ao clonar o repo,
+# inclusive no Windows. Sem isto, o Git no Windows converte para CRLF e scripts
+# executados dentro dos containers Linux podem falhar com "not found".
+* text=auto eol=lf
+
+# Reforço explícito para scripts de shell.
+*.sh text eol=lf

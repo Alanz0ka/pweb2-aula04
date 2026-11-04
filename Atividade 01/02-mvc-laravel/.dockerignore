@@ -1,0 +1,10 @@
+# Evita enviar para o build coisas geradas localmente (caso alguém rode o
+# Laravel fora do Docker). Tudo isto é recriado dentro do container.
+vendor
+node_modules
+database/database.sqlite
+storage/framework/cache
+storage/framework/sessions
+storage/framework/views
+storage/logs
+.env

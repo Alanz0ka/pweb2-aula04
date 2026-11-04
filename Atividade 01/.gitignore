@@ -1,0 +1,60 @@
+# ==========================================================================
+# .gitignore — aula "Três Arquiteturas, a Mesma Loja"
+#
+# Quase tudo é construído DENTRO dos containers Docker: dependências (npm),
+# o framework Laravel e os bancos SQLite são gerados no build/entrypoint e
+# NÃO ficam no repositório.
+# ==========================================================================
+
+# ----- Node (API e React) -----
+node_modules/
+dist/
+build/
+.npm/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ----- Vite / React -----
+.vite/
+*.local
+
+# ----- Laravel (Projeto 2) -----
+02-mvc-laravel/vendor/
+02-mvc-laravel/node_modules/
+02-mvc-laravel/public/build/
+02-mvc-laravel/storage/framework/cache/*
+02-mvc-laravel/storage/framework/sessions/*
+02-mvc-laravel/storage/framework/views/*
+02-mvc-laravel/storage/logs/*
+02-mvc-laravel/bootstrap/cache/*
+
+# ----- Bancos SQLite gerados -----
+*.sqlite
+*.sqlite3
+*.db
+
+# ----- Variáveis de ambiente / segredos -----
+.env
+.env.*
+!.env.example
+
+# ----- Editores / IDEs -----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ----- Sistema operacional -----
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# ----- iCloud -----
+*.icloud
+
+# ----- Logs -----
+*.log
+logs/

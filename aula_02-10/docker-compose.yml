@@ -16,3 +16,16 @@ services:
     # (No Docker Desktop do Windows/macOS já funciona por padrão.)
     extra_hosts:
       - "host.docker.internal:host-gateway"
+  db:
+    image: postgres:16-alpine
+    container_name: web2-todo-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=todo
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:

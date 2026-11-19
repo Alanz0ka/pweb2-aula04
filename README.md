@@ -8,5 +8,6 @@ Repositório de entregas de Alan Aquino na disciplina de Programação para Web 
 | `Atividade 02` | Atividade prática 02 (09/10) | API NestJS de tarefas e CRUD de projetos com validação (`backend-inicial`), prints do Postman |
 | `Atividade 03` | Atividade prática 03 (22/10) | Tarefas e projetos persistidos no PostgreSQL com TypeORM e migrations |
 | `Atividade 04` | Atividade prática 04 (04/11) | Autenticação com JWT em cookie httpOnly, login e cadastro, rotas de tarefas e projetos protegidas |
+| `Atividade 05` | Atividade prática 05 (06/11) | Upload de anexos para bucket (Supabase Storage) com validação e e-mail de nova tarefa (Resend) |
 
 Cada pasta tem seu próprio README com as instruções para rodar.

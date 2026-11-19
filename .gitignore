@@ -23,3 +23,9 @@ npm-debug.log*
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Segredos e uploads locais
+.env
+.env.*
+!.env.example
+uploads/
